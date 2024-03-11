@@ -9,16 +9,18 @@
 
 :root {
   --background-color: #e8e8e8;
-  --foreground-color: #003cff;
+  --foreground-color: #c7c7c7;
   --primary-text-color: #0a0a0a;
   --secondary-text-color: #ffffff;
+  --button-foreground-color: #93a5c2;
   --toggle-bg: #e4dd79;
   --toggle-fg: #dab200;
 }
 
 [data-theme="dark"] {
   --background-color: #0a0a0a;
-  --foreground-color: #567aff;
+  --foreground-color: #818181;
+  --button-foreground-color: #dddddd;
   --primary-text-color: #f6f6f6;
   --secondary-text-color: #0a0a0a;
   --toggle-bg: #283452;
@@ -47,11 +49,18 @@
   background-color: var(--foreground-color);
   color: var(--secondary-text-color);
   text-align: center;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.21);
 }
 
 .profile-pic {
-  width: 10vw;
+  margin: 20px auto 20px auto;
+  width: 20%;
+  justify-content: center;
   height: auto;
   display: block;
   clip-path: circle(50% at center);
+}
+
+.profile-pic-wrapper:hover {
+  filter: drop-shadow(0 0 2em #f1fcffaa);
 }
