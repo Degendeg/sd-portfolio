@@ -109,7 +109,6 @@ const App = () => {
         <Toggle isDark={isDark} handleChange={() => setIsDark(!isDark)} />
         {isVisible && <ToTopBtn isDark={isDark} goToTop={goToTop} />}
         <h1><ReactTyped strings={["Sebastian Degerman - Frontend Developer"]} typeSpeed={60} /></h1>
-        <h2>{import.meta.env.VITE_GITHUB_KEY} {" "} {process.env.VITE_GITHUB_KEY}</h2>
         <div className="container-wrapper">
           <div className="profile-pic-wrapper">
             <img ref={imgRef} className="profile-pic" src={imgSrc} alt="" />
