@@ -1,0 +1,7 @@
+.to-top-container {
+  position: fixed;
+  bottom: 2em;
+  right: 2.2em;
+  z-index: 999;
+  cursor: pointer;
+}

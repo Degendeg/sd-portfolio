@@ -1,66 +1,227 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-}
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
 
 :root {
-  --background-color: #e8e8e8;
-  --foreground-color: #c7c7c7;
+  --background-color: #b3b3b3;
   --primary-text-color: #0a0a0a;
-  --secondary-text-color: #ffffff;
-  --button-foreground-color: #93a5c2;
-  --toggle-bg: #e4dd79;
-  --toggle-fg: #dab200;
+  --button-foreground-color: #b2becf;
+  --toggle-bg: #b2becf;
+  --toggle-fg: #71839b;
 }
 
 [data-theme="dark"] {
-  --background-color: #0a0a0a;
-  --foreground-color: #818181;
-  --button-foreground-color: #dddddd;
+  --background-color: #333333;
+  --button-foreground-color: #696969;
   --primary-text-color: #f6f6f6;
-  --secondary-text-color: #0a0a0a;
   --toggle-bg: #283452;
   --toggle-fg: #00a6ff;
 }
 
-.app {
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-text-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-text-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-text-color);
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--primary-text-color);
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-top: 1em;
+  color: var(--primary-text-color);
+}
+
+p {
+  max-width: 52ch;
+  line-height: 1.5;
+  padding: 1em;
+  color: var(--primary-text-color);
+}
+
+ul {
+  list-style-type: none;
+  color: var(--primary-text-color);
+}
+
+a {
+  display: inline-block;
+  cursor: pointer;
+  /* padding: 1em 3.5em; */
+  /* background-color: var(--button-foreground-color); */
+  color: var(--primary-text-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0.3em;
+  font-weight: 700;
+  letter-spacing: .5px;
+  font-size: .875rem;
+}
+
+.container {
+  text-align: center;
+  color: var(--primary-text-color);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.blank {
+  width: 100%;
+  min-height: 60vh;
   background-color: var(--background-color);
-  transition: background-color 0.25s ease-in-out;
 }
 
-.title {
-  color: var(--primary-text-color);
-  margin-bottom: 50px;
-}
-
-.box {
-  padding: 20px;
-  border-radius: 10px;
-  background-color: var(--foreground-color);
-  color: var(--secondary-text-color);
+.blank-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.21);
+  padding-top: 5vh;
+  font-size: 1.5em;
+}
+
+.blank-wrapper a {
+  font-size: 1em;
+  color: #b0e7ff;
+}
+
+.second,
+.third {
+  background-attachment: fixed;
+  height: 1200px;
+}
+
+.container-bg-light {
+  background-image: url(https://images.unsplash.com/photo-1629905679177-4c4e2623654f?q=80&w=2436&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.container-bg-dark {
+  background-image: url(https://images.unsplash.com/photo-1623520527569-fee1da87f598?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.second-bg-light {
+  background-image: url(https://images.unsplash.com/photo-1546146830-2cca9512c68e?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.second-bg-dark {
+  background-image: url(https://images.unsplash.com/photo-1618388810903-840bb0d15ea5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.third-bg-light {
+  background-image: url(https://images.unsplash.com/photo-1526554850534-7c78330d5f90?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.third-bg-dark {
+  background-image: url(https://images.unsplash.com/photo-1511771983947-d0a43a94f18b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+}
+
+.item {
+  display: flex;
+  max-width: 320px;
+  background-color: var(--background-color);
+  flex-direction: column;
+  align-items: center;
+  border-radius: .5em;
+  -webkit-box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
+  box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
+}
+
+.card {
+  margin-bottom: 2vh;
+}
+
+.site-map {
+  display: flex;
+  flex-direction: column;
+  margin-top: .5vh;
+  max-height: 15vh;
+  gap: 1vh;
+  background: var(--background-color);
+  padding: 40px;
+  border-radius: 50%;
+  text-align: left;
+  animation: pulsate 2s infinite;
+  filter: drop-shadow(0 0 5px var(--primary-text-color));
+}
+
+@keyframes pulsate {
+  0% {
+    filter: drop-shadow(0 0 5px var(--primary-text-color));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 10px var(--primary-text-color));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 5px var(--primary-text-color));
+  }
+}
+
+.ul-repos,
+.container-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ul-repos li {
+  flex: 25%;
+}
+
+.socials {
+  width: 280px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 4vh;
+  border-radius: .3em;
+}
+
+.profile-pic-wrapper {
+  margin: 1vh 5vh 0 0;
 }
 
 .profile-pic {
-  margin: 20px auto 20px auto;
-  width: 20%;
-  justify-content: center;
+  width: 100%;
+  max-width: 222px;
   height: auto;
-  display: block;
-  clip-path: circle(50% at center);
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-bottom: 2vh;
 }
 
-.profile-pic-wrapper:hover {
-  filter: drop-shadow(0 0 2em #f1fcffaa);
+.profile-pic:hover {
+  filter: drop-shadow(0 0 2em var(--primary-text-color));
+}
+
+.second,
+.third {
+  flex-direction: row;
+  gap: 1.6em;
 }
