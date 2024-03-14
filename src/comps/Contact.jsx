@@ -15,7 +15,7 @@ const Contact = () => {
         <form onSubmit={handleSubmit} className="contact-form">
           <div className="form-group">
             <label htmlFor="email">
-              Din email
+              Your email
             </label>
             <input
               id="email"
@@ -34,7 +34,7 @@ const Contact = () => {
           />
           <div className="form-group">
             <label htmlFor="message">
-              Ditt meddelande
+              Your message
             </label>
             <textarea
               id="message"
@@ -50,7 +50,7 @@ const Contact = () => {
             className="error"
           />
           <button className="submit-btn" type="submit" disabled={state.submitting}>
-            Kontakta mig
+            Contact me
           </button>
         </form>
         {state.succeeded &&
