@@ -7,31 +7,6 @@ label {
     color: #fff !important;
 }
 
-::placeholder {
-    text-align: center;
-    transform: scale(2)
-}
-
-::-webkit-input-placeholder {
-    text-align: center;
-    transform: scale(2)
-}
-
-:-moz-placeholder {
-    text-align: center;
-    transform: scale(2)
-}
-
-::-moz-placeholder {
-    text-align: center;
-    transform: scale(2)
-}
-
-:-ms-input-placeholder {
-    text-align: center;
-    transform: scale(2)
-}
-
 .contact-form {
     width: auto;
     margin: 0 auto;
@@ -61,6 +36,8 @@ label {
 }
 
 .submit-btn {
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: bold;
     background-color: var(--button-foreground-color);
     color: var(--primary-text-color);
     padding: 10px 20px;
@@ -130,7 +107,7 @@ label {
 }
 
 .terminal-menu {
-    width: 60vw;
+    width: 40vw;
     box-sizing: border-box;
     height: 25px;
     background-color: #bbb;
@@ -140,9 +117,9 @@ label {
 }
 
 .terminal-screen {
-    background-color: #151515;
+    background-color: var(--terminal-color);
     box-sizing: border-box;
-    width: 60vw;
+    width: 40vw;
     margin: 0 auto 5vh;
     padding: 40px;
     border-bottom-left-radius: 5px;

@@ -4,6 +4,8 @@
   --background-color: #b3b3b3;
   --primary-text-color: #0a0a0a;
   --button-foreground-color: #b2becf;
+  --terminal-color: #6b6b6b;
+  --blank-text-color: #81d9ff;
   --toggle-bg: #b2becf;
   --toggle-fg: #71839b;
 }
@@ -11,6 +13,8 @@
 [data-theme="dark"] {
   --background-color: #333333;
   --button-foreground-color: #696969;
+  --terminal-color: #151515;
+  --blank-text-color: #b0e7ff;
   --primary-text-color: #f6f6f6;
   --toggle-bg: #283452;
   --toggle-fg: #00a6ff;
@@ -107,7 +111,7 @@ a {
 
 .blank-wrapper a {
   font-size: 1em;
-  color: #b0e7ff;
+  color: var(--blank-text-color);
 }
 
 .second,
@@ -159,9 +163,9 @@ a {
 .site-map {
   display: flex;
   flex-direction: column;
-  margin-top: .5vh;
-  max-height: 15vh;
-  gap: 1vh;
+  max-height: 12vh;
+  margin-top: 1.5vh;
+  gap: .5vh;
   background: var(--background-color);
   padding: 40px;
   border-radius: 50%;
@@ -191,7 +195,7 @@ a {
 }
 
 .ul-repos li {
-  flex: 25%;
+  flex: 30%;
 }
 
 .socials {
@@ -212,7 +216,7 @@ a {
   max-width: 222px;
   height: auto;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 2vh;
 }
 

@@ -22,7 +22,6 @@ const Contact = () => {
               type="email"
               name="email"
               className="form-control"
-              placeholder="✉️"
               required
             />
           </div>

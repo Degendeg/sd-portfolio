@@ -5,3 +5,26 @@
   z-index: 999;
   cursor: pointer;
 }
+
+.shake-anim {
+  animation: shake 0.5s ease infinite;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25%,
+  75% {
+    transform: translateX(-5px);
+    /* Adjust the amount of shaking (horizontal movement) */
+  }
+
+  50% {
+    transform: translateX(5px);
+    /* Adjust the amount of shaking (horizontal movement) */
+  }
+}
