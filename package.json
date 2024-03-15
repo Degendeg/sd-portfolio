@@ -12,6 +12,7 @@
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "react": "^18.2.0",
+    "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-typed": "^2.0.12",
     "use-local-storage": "^3.0.0"

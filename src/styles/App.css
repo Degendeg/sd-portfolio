@@ -96,7 +96,7 @@ a {
 
 .blank {
   width: 100%;
-  min-height: 60vh;
+  min-height: 50vh;
   background-color: var(--background-color);
 }
 
@@ -160,34 +160,6 @@ a {
   margin-bottom: 2vh;
 }
 
-.site-map {
-  display: flex;
-  flex-direction: column;
-  max-height: 13vh;
-  margin-top: 1vh;
-  gap: .5vh;
-  background: var(--background-color);
-  padding: 44px;
-  border-radius: 50%;
-  text-align: left;
-  animation: pulsate 2s infinite;
-  filter: drop-shadow(0 0 5px var(--primary-text-color));
-}
-
-@keyframes pulsate {
-  0% {
-    filter: drop-shadow(0 0 5px var(--primary-text-color));
-  }
-
-  50% {
-    filter: drop-shadow(0 0 10px var(--primary-text-color));
-  }
-
-  100% {
-    filter: drop-shadow(0 0 5px var(--primary-text-color));
-  }
-}
-
 .ul-repos,
 .container-wrapper {
   display: flex;
@@ -217,7 +189,7 @@ a {
 
 .profile-pic {
   width: 100%;
-  max-width: 222px;
+  max-width: 444px;
   height: auto;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.2);

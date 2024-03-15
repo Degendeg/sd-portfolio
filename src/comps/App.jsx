@@ -1,10 +1,12 @@
 import '../styles/App.css'
+import '../styles/Burger.css'
 import Contact from './Contact'
 import Toggle from './Toggle'
 import imgSrc from '../assets/me.webp'
 import useLocalStorage from 'use-local-storage'
 import { useEffect, useRef, useState } from 'react'
 import { ReactTyped } from 'react-typed'
+import { slide as Menu } from 'react-burger-menu'
 import ToTopBtn from './ToTopBtn'
 import Socials from './Socials'
 import RndFact from './RndFact'
@@ -55,7 +57,9 @@ const App = () => {
     let birthdate = new Date('1989-10-12')
     let currentDate = new Date()
     let ageFromDate = currentDate.getFullYear() - birthdate.getFullYear()
-    if (currentDate.getMonth() < birthdate.getMonth() || (currentDate.getMonth() === birthdate.getMonth() && currentDate.getDate() < birthdate.getDate())) {
+    if (currentDate.getMonth() < birthdate.getMonth() ||
+      (currentDate.getMonth() === birthdate.getMonth() &&
+        currentDate.getDate() < birthdate.getDate())) {
       ageFromDate--
     }
     setAge(ageFromDate)
@@ -115,13 +119,13 @@ const App = () => {
           <div className="profile-pic-wrapper">
             <img ref={imgRef} className="profile-pic" src={imgSrc} alt="" />
           </div>
-          <div className="site-map">
-            <a onClick={goToRef(aboutRef)}>🔗 About me</a>
-            <a onClick={goToRef(socialsRef)}>🔗 My socials</a>
-            <a onClick={goToRef(reposRef)}>🔗 Repositories</a>
-            <a onClick={goToRef(itemsRef)}>🔗 Items</a>
-            <a onClick={goToRef(contactRef)}>🔗 Contact me</a>
-          </div>
+          <Menu>
+            <a className="bm-menu-item" onClick={goToRef(aboutRef)}>🔗 About me</a>
+            <a className="bm-menu-item" onClick={goToRef(socialsRef)}>🔗 My socials</a>
+            <a className="bm-menu-item" onClick={goToRef(reposRef)}>🔗 Repositories</a>
+            <a className="bm-menu-item" onClick={goToRef(itemsRef)}>🔗 Items</a>
+            <a className="bm-menu-item" onClick={goToRef(contactRef)}>🔗 Contact me</a>
+          </Menu>
         </div>
       </div>
       <div className="blank">
