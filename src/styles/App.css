@@ -170,9 +170,13 @@ a {
   flex: 30%;
 }
 
-.socials {
+.socials,
+.socials-svg {
   width: 280px;
   height: 200px;
+}
+
+.socials {
   background-size: cover;
   background-position: center;
   margin-top: 4vh;
@@ -204,4 +208,20 @@ a {
 .third {
   flex-direction: row;
   gap: 1.6em;
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-device-width: 812px) {
+
+  .second,
+  .third,
+  .ul-repos {
+    flex-direction: column;
+  }
+
+  .socials,
+  .socials-svg {
+    width: 240px;
+    height: 100px;
+  }
 }

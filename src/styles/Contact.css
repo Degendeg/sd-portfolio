@@ -142,3 +142,12 @@ label {
     color: #fff;
     font-weight: bold;
 }
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-device-width: 812px) {
+
+    .terminal-menu,
+    .terminal-screen {
+        width: 80vw;
+    }
+}

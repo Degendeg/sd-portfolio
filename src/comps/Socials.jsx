@@ -4,7 +4,7 @@ const Socials = ({ socialsRef, isDark }) => {
       <div className="item" ref={socialsRef}>
         <div className="socials">
           <a href="https://www.linkedin.com/in/sebastian-degerman-063360100?originalSubdomain=se" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="280" viewBox="0 3 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" className="socials-svg" viewBox="0 0 16 16">
               <path fill={isDark ? '#FFFFFF' : ''}
                 d={`M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 
               1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837
@@ -23,7 +23,7 @@ const Socials = ({ socialsRef, isDark }) => {
       <div className="item">
         <div className="socials">
           <a href="https://github.com/Degendeg" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="280" viewBox="0 3 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" className="socials-svg" viewBox="0 0 16 16">
               <path fill={isDark ? '#FFFFFF' : ''}
                 d={`M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 
               7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
@@ -41,7 +41,7 @@ const Socials = ({ socialsRef, isDark }) => {
       <div className="item">
         <div className="socials">
           <a href="CV.pdf" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="280" viewBox="0 3 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" className="socials-svg" viewBox="0 0 16 16">
               <path fill={isDark ? '#FFFFFF' : ''}
                 d={`M5.523 12.424q.21-.124.459-.238a8 8 0 0 1-.45.606c-.28.337-.498.516-.635.572l-.035.012a.3.3 0 0 
               1-.026-.044c-.056-.11-.054-.216.04-.36.106-.165.319-.354.647-.548m2.455-1.647q-.178.037-.356.078a21 21 0 0 0
@@ -68,7 +68,7 @@ const Socials = ({ socialsRef, isDark }) => {
       <div className="item">
         <div className="socials">
           <a href="https://stackoverflow.com/users/3509874/urbz?tab=profile" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="280" viewBox="0 3 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" className="socials-svg" viewBox="0 0 16 16">
               <path fill={isDark ? '#FFFFFF' : ''}
                 d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984z" />
               <path fill={isDark ? '#FFFFFF' : ''}
