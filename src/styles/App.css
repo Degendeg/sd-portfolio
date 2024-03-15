@@ -163,11 +163,11 @@ a {
 .site-map {
   display: flex;
   flex-direction: column;
-  max-height: 12vh;
-  margin-top: 1.5vh;
+  max-height: 13vh;
+  margin-top: 1vh;
   gap: .5vh;
   background: var(--background-color);
-  padding: 40px;
+  padding: 44px;
   border-radius: 50%;
   text-align: left;
   animation: pulsate 2s infinite;
@@ -205,6 +205,10 @@ a {
   background-position: center;
   margin-top: 4vh;
   border-radius: .3em;
+}
+
+.socials-h1 {
+  margin-left: 2vw;
 }
 
 .profile-pic-wrapper {
