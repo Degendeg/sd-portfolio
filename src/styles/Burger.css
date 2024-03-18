@@ -11,7 +11,7 @@
 }
 
 .bm-burger-bars-hover {
-    background: #a90000;
+    background: var(--primary-text-color);
 }
 
 .bm-menu-wrap,

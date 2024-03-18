@@ -70,7 +70,6 @@ a {
   display: inline-block;
   cursor: pointer;
   /* padding: 1em 3.5em; */
-  /* background-color: var(--button-foreground-color); */
   color: var(--primary-text-color);
   text-decoration: none;
   text-transform: uppercase;
@@ -97,6 +96,7 @@ a {
 .blank {
   width: 100%;
   min-height: 50vh;
+  padding-bottom: 1vh;
   background-color: var(--background-color);
 }
 
@@ -111,6 +111,7 @@ a {
 
 .blank-wrapper a {
   font-size: 1em;
+  text-shadow: 1px 1px 1px #000b70;
   color: var(--blank-text-color);
 }
 
