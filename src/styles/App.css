@@ -148,7 +148,7 @@ a {
 
 .item {
   display: flex;
-  max-width: 18vw;
+  max-width: 20vw;
   background-color: var(--background-color);
   flex-direction: column;
   align-items: center;
@@ -159,7 +159,8 @@ a {
 }
 
 .third>.item {
-  min-height: 40vh;
+  max-height: 50vh;
+  font-size: .9em;
 }
 
 .card {
@@ -171,16 +172,21 @@ a {
 .container-wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .ul-repos li {
-  flex: 30%;
+  margin: 20px;
 }
 
 .socials,
 .socials-svg {
   width: 280px;
   height: 200px;
+}
+
+.socials-svg:hover {
+  transform: scale(1.1);
 }
 
 .socials {
@@ -208,7 +214,7 @@ a {
 }
 
 .profile-pic:hover {
-  filter: drop-shadow(0 0 2em var(--primary-text-color));
+  filter: drop-shadow(0 0 1em var(--primary-text-color));
 }
 
 /* Large screens */
@@ -228,7 +234,20 @@ a {
 @media only screen and (min-device-width: 300px) and (max-device-width: 812px) {
 
   .ul-repos {
-    margin-left: -5vw;
+    margin-left: -10vw;
+  }
+
+  .ul-repos li {
+    margin: 5px;
+  }
+
+  .profile-h1 {
+    font-size: 2em;
+  }
+
+  .profile-pic {
+    margin-left: 5vw;
+    max-width: 300px;
   }
 
   .second,
@@ -237,9 +256,19 @@ a {
     flex-direction: column;
   }
 
-  .socials,
+  .item {
+    min-width: 50vw;
+    max-height: 30vh;
+  }
+
+  .third>.item {
+    min-width: 80vw;
+    max-height: 85vh !important;
+    font-size: .7em;
+  }
+
   .socials-svg {
-    width: 240px;
+    width: 100px;
     height: 100px;
   }
 }

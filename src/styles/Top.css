@@ -6,8 +6,12 @@
   cursor: pointer;
 }
 
-.shake-anim {
+/* .to-top-container:hover {
   animation: shake 0.5s ease infinite;
+} */
+
+.to-top-container:hover {
+  transform: scale(1.2)
 }
 
 @keyframes shake {

@@ -114,7 +114,7 @@ const App = () => {
       <div className={`container ${isDark ? 'container-bg-dark' : 'container-bg-light'}`}>
         <Toggle isDark={isDark} handleChange={() => setIsDark(!isDark)} />
         {isVisible && <ToTopBtn isDark={isDark} goToTop={goToTop} />}
-        <h1><ReactTyped strings={["Sebastian Degerman - Frontend Developer"]} typeSpeed={60} /></h1>
+        <h1 class="profile-h1"><ReactTyped strings={["Sebastian Degerman - Frontend Developer"]} typeSpeed={60} /></h1>
         <div className="container-wrapper">
           <div className="profile-pic-wrapper">
             <img ref={imgRef} className="profile-pic" src={imgSrc} alt="" />

@@ -17,6 +17,10 @@
     user-select: none;
 }
 
+.toggle-label-span {
+    margin-bottom: 6px;
+}
+
 .toggle+label {
     display: flex;
     align-items: center;

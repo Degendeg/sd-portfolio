@@ -11,7 +11,9 @@ const Toggle = ({ handleChange, isDark }) => {
         checked={isDark}
       />
       <label className="toggle-label" htmlFor="check">
-        {isDark ? '🌙' : '☀️'}
+        <span className="toggle-label-span">
+          {isDark ? '🌙' : '☀️'}
+        </span>
       </label>
     </div>
   );
