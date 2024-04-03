@@ -93,6 +93,19 @@ a {
   background-attachment: fixed;
 }
 
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-5 {
+  margin-right: 5vw;
+}
+
+.mt-0-mb-5 {
+  margin-top: 0;
+  margin-bottom: 5vh;
+}
+
 .blank {
   width: 100%;
   min-height: 45vh;
@@ -123,27 +136,27 @@ a {
 }
 
 .container-bg-light {
-  background-image: url(https://images.unsplash.com/photo-1629905679177-4c4e2623654f?q=80&w=2436&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  background-image: url('../assets/container-bg-light.avif')
 }
 
 .container-bg-dark {
-  background-image: url(https://images.unsplash.com/photo-1623520527569-fee1da87f598?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  background-image: url('../assets/container-bg-dark.avif')
 }
 
 .second-bg-light {
-  background-image: url(https://images.unsplash.com/photo-1546146830-2cca9512c68e?q=80&w=2680&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  background-image: url('../assets/second-bg-light.avif')
 }
 
 .second-bg-dark {
-  background-image: url(https://images.unsplash.com/photo-1618388810903-840bb0d15ea5?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  background-image: url('../assets/second-bg-dark.avif')
 }
 
 .third-bg-light {
-  background-image: url(https://images.unsplash.com/photo-1526554850534-7c78330d5f90?q=80&w=2669&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  background-image: url('../assets/third-bg-light.avif')
 }
 
 .third-bg-dark {
-  background-image: url(https://images.unsplash.com/photo-1511771983947-d0a43a94f18b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+  background-image: url('../assets/third-bg-dark.avif')
 }
 
 .item {
@@ -160,7 +173,9 @@ a {
 
 .third>.item {
   max-height: 50vh;
-  font-size: .9em;
+  font-size: .8em;
+  min-width: 40vw;
+  padding: 20px;
 }
 
 .card {
@@ -215,6 +230,11 @@ a {
 
 .profile-pic:hover {
   filter: drop-shadow(0 0 1em var(--primary-text-color));
+}
+
+.rnd-fact-h1 {
+  position: absolute;
+  margin-bottom: 60vh;
 }
 
 /* Large screens */

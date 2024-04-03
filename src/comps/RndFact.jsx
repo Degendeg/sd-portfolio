@@ -1,28 +1,37 @@
-const RndFact = ({ itemsRef, isDark }) => {
+import { useState, useEffect } from 'react';
+
+const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
+  const randomFacts = [
+    { header: 'Kattägare', text: 'Min katt heter Elda och är 8 år gammal. Hon är en vanlig men underbar bondkatt.' },
+    { header: 'Tvillingpappa', text: 'Mina barn heter Alice och Ella och är födda 2023, så dem är små och livliga!' },
+    { header: 'Datorspelare', text: 'Jag har spelat datorspel sedan barnsben. The Sims, Warcraft, C&C, Sudden Strike, CS, WoW, DotA 2, RL, The Long Dark mfl..' },
+    { header: 'Utövar sport', text: 'Trots att min familj tar upp majoriteten av min tid så försöker jag att träna, det blir mest padel och innebandy. Tycker ishockey och fotboll är roligt också!' },
+    { header: 'Favoritfilmer', text: 'Det är svårt att bara välja en favoritfilm så jag nämner flera.. där ingår Star Wars (4,5,6), Gladiator, Goodfellas, Shawshank Redemption samt Interstellar.' },
+    { header: 'Bästa TV-serier', text: 'Det är svårt att bara välja en serie så jag nämner flera.. Entourage, Breaking Bad, Prison Break, The Big Bang Theory, Stargate SG-1 mfl..' },
+  ];
+
+  const [factIndex, setFactIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setFactIndex(prevIndex => (prevIndex + 1) % randomFacts.length);
+    }, 5000); // Change the interval time as needed (in milliseconds)
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className={`container third ${isDark ? 'third-bg-dark' : 'third-bg-light'}`}>
-      <div className="item">
+      <h1 className="rnd-fact-h1"><ReactTyped strings={["Random facts about me"]} typeSpeed={60} /></h1>
+      <div className="item" ref={itemsRef}>
         <div className="img img-first"></div>
         <div className="card">
-          <h3>Work in progress 🚧</h3>
-          <p>Löksås ipsum flera om färdväg där som ännu åker gör, sjö sista miljoner hans jäst fram från vidsträckt denna, precis stora se det tid äng olika räv. Stora äng hela mjuka strand ser bland mot, lax och dimmhöljd på kan denna precis, sista vi det bland så tiden.</p>
-        </div>
-      </div>
-      <div className="item" ref={itemsRef}>
-        <div className="img img-second"></div>
-        <div className="card">
-          <h3>Work in progress 🚧</h3>
-          <p>Vid sitt tidigare annan bland äng vemod plats dimma där rot, genom annat år träutensilierna ta lax se där blivit, kan trevnadens blev enligt därmed själv vid genom kanske. Lax mot dimmhöljd upprätthållande ordningens tid annan sorgliga omfångsrik icke groda.</p>
-        </div>
-      </div>
-      <div className="item">
-        <div className="img img-third"></div>
-        <div className="card">
-          <h3>Work in progress 🚧</h3>
-          <p>Se bäckasiner därmed vid ingalunda groda om, se kom strand på själv både, sjö helt sitt är björnbär. Nu kan annat stig om hans kanske söka så plats hwila, plats denna strand vi hav har del av mjuka hans, blivit vi vidsträckt mjuka helt samma bra sig enligt.</p>
+          <h3>{randomFacts[factIndex].header}</h3>
+          <p>{randomFacts[factIndex].text}</p>
         </div>
       </div>
     </div>
-  )
-}
-export default RndFact
+  );
+};
+
+export default RndFact;

@@ -12,6 +12,7 @@
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "react": "^18.2.0",
+    "react-animated-cursor": "^2.11.2",
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-typed": "^2.0.12",

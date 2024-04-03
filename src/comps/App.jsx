@@ -130,7 +130,7 @@ const App = () => {
       </div>
       <div className="blank">
         <div className="blank-wrapper">
-          <p ref={aboutRef}>
+          <p class="mt-0" ref={aboutRef}>
             My name is Sebastian Degerman, I am {age} years old.
             I currently work as a consultant at <a href="https://www.consid.com/" target="_blank">Consid</a> with almost all
             my focus on frontend.
@@ -138,7 +138,7 @@ const App = () => {
             I like React, Vue, REST APIs, Azure,
             Netlify, DatoCMS, webpack/npm.
           </p>
-          <p style={{ marginTop: '0' }}>
+          <p class="mt-0-mb-5">
             When I get the opportunity, I do C# and Python aswell.
             I talk to my imaginary friend ChatGPT quite alot and do <a href="https://www.codingame.com/"
               target="_blank">CodinGame</a> nowadays.
@@ -149,7 +149,7 @@ const App = () => {
       </div>
       <Socials socialsRef={socialsRef} isDark={isDark} />
       <div className="blank">
-        <div className="blank-wrapper" style={{ marginRight: '5vw' }}>
+        <div className="blank-wrapper mr-5">
           <h1 className="socials-h1" ref={reposRef}>
             GitHub{" "}
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16">
@@ -179,7 +179,7 @@ const App = () => {
           </ul>
         </div>
       </div>
-      <RndFact itemsRef={itemsRef} isDark={isDark} />
+      <RndFact itemsRef={itemsRef} isDark={isDark} ReactTyped={ReactTyped} />
       <div className="blank" ref={contactRef}>
         <div className="blank-wrapper">
           <Contact />
