@@ -1,16 +1,24 @@
 import { useState, useEffect } from 'react';
+import { Modal, ModalBody, ModalFooter, ModalHeader } from 'react-modern-modal';
+import imageSrc from '../assets/elda.jpg';
 
 const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
-  const randomFacts = [
-    { header: 'Kattägare', text: 'Min katt heter Elda och är 8 år gammal. Hon är en vanlig men underbar bondkatt.' },
-    { header: 'Tvillingpappa', text: 'Mina barn heter Alice och Ella och är födda 2023, så dem är små och livliga!' },
-    { header: 'Datorspelare', text: 'Jag har spelat datorspel sedan barnsben. The Sims, Warcraft, C&C, Sudden Strike, CS, WoW, DotA 2, RL, The Long Dark mfl..' },
-    { header: 'Utövar sport', text: 'Trots att min familj tar upp majoriteten av min tid så försöker jag att träna, det blir mest padel och innebandy. Tycker ishockey och fotboll är roligt också!' },
-    { header: 'Favoritfilmer', text: 'Det är svårt att bara välja en favoritfilm så jag nämner flera.. där ingår Star Wars (4,5,6), Gladiator, Goodfellas, Shawshank Redemption samt Interstellar.' },
-    { header: 'Bästa TV-serier', text: 'Det är svårt att bara välja en serie så jag nämner flera.. Entourage, Breaking Bad, Prison Break, The Big Bang Theory, Stargate SG-1 mfl..' },
-  ];
-
   const [factIndex, setFactIndex] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = (text) => {
+    text.includes('image here') ? setIsOpen(true) : setIsOpen(false)
+  };
+  const handleClose = () => setIsOpen(false);
+
+  const randomFacts = [
+    { header: 'Cat Owner', text: 'My cats name is Elda and she is 8 years old. She is just a farmers cat but a loved family member, see <strong>image here</strong>.' },
+    { header: 'Dad', text: 'My childrens names are Alice and Ella and they were born in 2023, so they are small and lively! Yes, they are <strong>twins</strong>!' },
+    { header: 'Gamer', text: 'I have been playing video games since childhood. The Sims, Warcraft, C&C, Sudden Strike, CS, WoW, DotA 2, RL, The Long Dark, etc..' },
+    { header: 'Sports Enthusiast', text: 'Even though my family takes up most of my time, I still try to exercise, mostly playing padel and floorball. I also enjoy ice hockey and football!' },
+    { header: 'Favorite Movies', text: 'It is difficult to choose just one favorite movie, so I will mention several.. including Star Wars (4,5,6), Gladiator, Goodfellas, Shawshank Redemption, and Interstellar.' },
+    { header: 'Favorite TV Shows', text: 'It is difficult to choose just one TV series, so I will mention several.. Entourage, Breaking Bad, Prison Break, The Big Bang Theory, Stargate SG-1, etc..' },
+  ];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -27,9 +35,14 @@ const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
         <div className="img img-first"></div>
         <div className="card">
           <h3>{randomFacts[factIndex].header}</h3>
-          <p>{randomFacts[factIndex].text}</p>
+          <p onClick={(e) => handleOpen(e.target.textContent)} dangerouslySetInnerHTML={{ __html: randomFacts[factIndex].text }}></p>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <ModalBody>
+          <img src={imageSrc} alt="" className="img-thumbnail" />
+        </ModalBody>
+      </Modal>
     </div>
   );
 };

@@ -114,7 +114,7 @@ const App = () => {
       <div className={`container ${isDark ? 'container-bg-dark' : 'container-bg-light'}`}>
         <Toggle isDark={isDark} handleChange={() => setIsDark(!isDark)} />
         {isVisible && <ToTopBtn isDark={isDark} goToTop={goToTop} />}
-        <h1 class="profile-h1"><ReactTyped strings={["Sebastian Degerman - Frontend Developer"]} typeSpeed={60} /></h1>
+        <h1 className="profile-h1"><ReactTyped strings={["Sebastian Degerman - Frontend Developer"]} typeSpeed={60} /></h1>
         <div className="container-wrapper">
           <div className="profile-pic-wrapper">
             <img ref={imgRef} className="profile-pic" src={imgSrc} alt="" />
@@ -130,7 +130,7 @@ const App = () => {
       </div>
       <div className="blank">
         <div className="blank-wrapper">
-          <p class="mt-0" ref={aboutRef}>
+          <p className="mt-0" ref={aboutRef}>
             My name is Sebastian Degerman, I am {age} years old.
             I currently work as a consultant at <a href="https://www.consid.com/" target="_blank">Consid</a> with almost all
             my focus on frontend.
@@ -138,7 +138,7 @@ const App = () => {
             I like React, Vue, REST APIs, Azure,
             Netlify, DatoCMS, webpack/npm.
           </p>
-          <p class="mt-0-mb-5">
+          <p className="mt-0-mb-5">
             When I get the opportunity, I do C# and Python aswell.
             I talk to my imaginary friend ChatGPT quite alot and do <a href="https://www.codingame.com/"
               target="_blank">CodinGame</a> nowadays.
