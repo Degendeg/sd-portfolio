@@ -12,7 +12,7 @@ const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
   const handleClose = () => setIsOpen(false);
 
   const randomFacts = [
-    { header: 'Cat Owner', text: 'My cats name is Elda and she is 8 years old. She is just a farmers cat but a loved family member, see <strong>image here</strong>.' },
+    { header: 'Cat Owner', text: 'My cats name is Elda and she is 8 years old. She is just a farmers cat but a loved family member, see <a>image here</a>.' },
     { header: 'Dad', text: 'My childrens names are Alice and Ella and they were born in 2023, so they are small and lively! Yes, they are <strong>twins</strong>!' },
     { header: 'Gamer', text: 'I have been playing video games since childhood. The Sims, Warcraft, C&C, Sudden Strike, CS, WoW, DotA 2, RL, The Long Dark, etc..' },
     { header: 'Sports Enthusiast', text: 'Even though my family takes up most of my time, I still try to exercise, mostly playing padel and floorball. I also enjoy ice hockey and football!' },

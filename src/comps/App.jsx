@@ -120,11 +120,11 @@ const App = () => {
             <img ref={imgRef} className="profile-pic" src={imgSrc} alt="" />
           </div>
           <Menu>
-            <a className="bm-menu-item" onClick={goToRef(aboutRef)}>🔗 About me</a>
-            <a className="bm-menu-item" onClick={goToRef(socialsRef)}>🔗 My socials</a>
-            <a className="bm-menu-item" onClick={goToRef(reposRef)}>🔗 Repositories</a>
-            <a className="bm-menu-item" onClick={goToRef(itemsRef)}>🔗 Items</a>
-            <a className="bm-menu-item" onClick={goToRef(contactRef)}>🔗 Contact me</a>
+            <a className="bm-menu-item" onClick={goToRef(aboutRef)}>🔗 About</a>
+            <a className="bm-menu-item" onClick={goToRef(socialsRef)}>🔗 Socials</a>
+            <a className="bm-menu-item" onClick={goToRef(reposRef)}>🔗 Repos</a>
+            <a className="bm-menu-item" onClick={goToRef(itemsRef)}>🔗 Facts</a>
+            <a className="bm-menu-item" onClick={goToRef(contactRef)}>🔗 Contact</a>
           </Menu>
         </div>
       </div>
@@ -150,8 +150,8 @@ const App = () => {
       <Socials socialsRef={socialsRef} isDark={isDark} />
       <div className="blank">
         <div className="blank-wrapper mr-5">
-          <h1 className="socials-h1" ref={reposRef}>
-            GitHub{" "}
+          <div className="socials-wrapper" ref={reposRef}>
+            <h1>GitHub</h1>
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 16 16">
               <path fill={isDark ? '#FFFFFF' : ''}
                 d={`M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 
@@ -162,8 +162,8 @@ const App = () => {
                    3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z`}
               />
             </svg>
-            {" "}Repos
-          </h1>
+            <h1>Repos</h1>
+          </div>
           <ul className="ul-repos">
             {repos ? (
               <>
