@@ -129,7 +129,7 @@ const App = () => {
         </div>
       </div>
       <div className="blank">
-        <div className="blank-wrapper">
+        <div className="about-me-wrapper blank-wrapper">
           <p className="mt-0" ref={aboutRef}>
             My name is Sebastian Degerman, I am {age} years old.
             I currently work as a consultant at <a href="https://www.consid.com/" target="_blank">Consid</a> with almost all
@@ -174,7 +174,7 @@ const App = () => {
                 ))}
               </>
             ) : (
-              <>Laddar repos...</>
+              <>Loading repos...</>
             )}
           </ul>
         </div>

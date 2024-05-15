@@ -173,6 +173,7 @@ a {
   flex-direction: column;
   align-items: center;
   border-radius: .5em;
+  margin-top: 10vh;
   -webkit-box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
   -moz-box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
   box-shadow: 0px 29px 38px -15px rgba(0, 0, 0, 0.43);
@@ -198,7 +199,7 @@ a {
 }
 
 .ul-repos li {
-  margin: 20px;
+  margin: 12px;
 }
 
 .socials,
@@ -281,6 +282,15 @@ a {
 
   .profile-h1 {
     font-size: 2em;
+  }
+
+  .rnd-fact-h1 {
+    font-size: 1.8em;
+    margin-bottom: 50vh;
+  }
+
+  .about-me-wrapper p {
+    font-size: .9em;
   }
 
   .profile-pic {

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Modal, ModalBody, ModalFooter, ModalHeader } from 'react-modern-modal';
+import { Modal, ModalBody } from 'react-modern-modal';
 import imageSrc from '../assets/elda.jpg';
+import purify from 'dompurify'
 
 const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
   const [factIndex, setFactIndex] = useState(0);
@@ -35,7 +36,7 @@ const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
         <div className="img img-first"></div>
         <div className="card">
           <h3>{randomFacts[factIndex].header}</h3>
-          <p onClick={(e) => handleOpen(e.target.textContent)} dangerouslySetInnerHTML={{ __html: randomFacts[factIndex].text }}></p>
+          <p onClick={(e) => handleOpen(e.target.textContent)} dangerouslySetInnerHTML={{ __html: purify.sanitize(randomFacts[factIndex].text) }}></p>
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={handleClose}>
