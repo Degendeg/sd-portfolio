@@ -55,7 +55,7 @@ h3 {
 }
 
 p {
-  max-width: 52ch;
+  max-width: 62ch;
   line-height: 1.5;
   padding: 1em;
   color: var(--primary-text-color);
@@ -108,7 +108,7 @@ a {
 
 .blank {
   width: 100%;
-  min-height: 45vh;
+  min-height: 44vh;
   background-color: var(--background-color);
 }
 
@@ -239,6 +239,7 @@ a {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.2);
   margin-bottom: 2vh;
+  animation: slideInFromRight 2s ease-in-out;
 }
 
 .profile-pic:hover {
@@ -318,5 +319,17 @@ a {
   .socials-svg {
     width: 100px;
     height: 100px;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

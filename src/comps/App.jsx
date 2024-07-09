@@ -18,38 +18,18 @@ const App = () => {
   const [repos, setRepos] = useState(null)
   const [age, setAge] = useState(null)
   const aboutRef = useRef()
-  const imgRef = useRef()
   const socialsRef = useRef()
   const reposRef = useRef()
   const itemsRef = useRef()
   const contactRef = useRef()
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      const { clientX, clientY } = e
-      const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = imgRef.current
-
-      const offsetX = (clientX - offsetLeft) / offsetWidth - 0.5
-      const offsetY = (clientY - offsetTop) / offsetHeight - 0.5
-
-      imgRef.current.style.transform = `translate(${offsetX * 20}px, ${offsetY * 20}px)`
-    }
-
-    const handleMouseLeave = () => {
-      imgRef.current.style.transform = 'none'
-    }
-
     window.addEventListener('scroll', handleScroll)
-    imgRef.current.addEventListener('mousemove', handleMouseMove)
-    imgRef.current.addEventListener('mouseleave', handleMouseLeave)
-
     calculateAge()
     getRepos()
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      imgRef.current.removeEventListener('mousemove', handleMouseMove)
-      imgRef.current.removeEventListener('mouseleave', handleMouseLeave)
     }
   }, [])
 
@@ -117,7 +97,7 @@ const App = () => {
         <h1 className="profile-h1"><ReactTyped strings={["Sebastian Degerman - Frontend Developer"]} typeSpeed={60} /></h1>
         <div className="container-wrapper">
           <div className="profile-pic-wrapper">
-            <img ref={imgRef} className="profile-pic" src={imgSrc} alt="" />
+            <img className="profile-pic" src={imgSrc} alt="" />
           </div>
           <Menu>
             <a className="bm-menu-item" onClick={goToRef(aboutRef)}>🔗 About</a>
