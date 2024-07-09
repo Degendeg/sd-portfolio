@@ -261,12 +261,12 @@ a {
 @media screen and (min-width: 1800px) {
   .ul-repos {
     display: block;
-    margin-left: 5vw;
+    margin-left: 6vw;
   }
 
   .ul-repos li {
     float: left;
-    padding: 15px;
+    padding: 5px;
   }
 }
 
