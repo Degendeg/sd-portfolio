@@ -53,7 +53,7 @@ const Contact = () => {
           </button>
         </form>
         {state.succeeded &&
-          <p className="success">Thanks for contacting me, I will get back to you when I have time.</p>
+          <p className="success">Thank you for contacting me, I will get back to you when I have time. 👏⌛</p>
         }
       </div>
     </div>
