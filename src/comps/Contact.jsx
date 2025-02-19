@@ -49,7 +49,7 @@ const Contact = () => {
             className="error"
           />
           <button className="submit-btn" type="submit" disabled={state.submitting}>
-            Contact me
+            Send 📧
           </button>
         </form>
         {state.succeeded &&

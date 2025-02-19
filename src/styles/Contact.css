@@ -46,6 +46,11 @@ label {
     cursor: pointer;
 }
 
+.submit-btn:hover {
+    transform: scale(1.2);
+    transition: all .3s;
+}
+
 .success {
     border: 5px solid rgb(0, 212, 0);
     width: 50% !important;
