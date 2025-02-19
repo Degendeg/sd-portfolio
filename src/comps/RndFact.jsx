@@ -31,7 +31,7 @@ const RndFact = ({ itemsRef, isDark, ReactTyped }) => {
 
   return (
     <div className={`container third ${isDark ? 'third-bg-dark' : 'third-bg-light'}`}>
-      <h1 className="rnd-fact-h1"><ReactTyped strings={["Random facts about me"]} typeSpeed={60} /></h1>
+      <h1 className="rnd-fact-h1"><ReactTyped strings={["About me 🧾"]} typeSpeed={60} /></h1>
       <div className="item" ref={itemsRef}>
         <div className="img img-first"></div>
         <div className="card">

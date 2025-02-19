@@ -32,7 +32,7 @@ label {
 }
 
 .form-h1 {
-    margin: 0 0 2vh 0;
+    margin: 0 0 5vh 0;
 }
 
 .submit-btn {
@@ -147,5 +147,9 @@ label {
     .terminal-menu,
     .terminal-screen {
         width: 80vw;
+    }
+
+    .form-h1 {
+        font-size: 1.8em;
     }
 }

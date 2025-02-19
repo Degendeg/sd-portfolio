@@ -37,8 +37,11 @@
 
 .bm-menu-item {
     text-align: left;
-    margin-top: 1vh;
     font-size: 1.15em;
+}
+
+.bm-menu-item:not(:first-child) {
+    margin-top: 3vh;
 }
 
 .bm-item-list {
@@ -55,4 +58,12 @@
 
 .bm-menu::-webkit-scrollbar {
     display: none;
+}
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-device-width: 812px) {
+
+    .bm-menu-item:not(:first-child) {
+        margin-top: 50px;
+    }
 }

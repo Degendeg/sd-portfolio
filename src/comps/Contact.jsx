@@ -5,7 +5,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("moqglkbl");
   return (
     <div className="form-wrapper">
-      <h1 className="form-h1">Contact</h1>
+      <h1 className="form-h1">Contact me 📩</h1>
       <div className="terminal-menu">
         <div className="terminal-btns terminal-close"></div>
         <div className="terminal-btns terminal-minimize"></div>
