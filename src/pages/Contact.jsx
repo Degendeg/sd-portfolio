@@ -37,23 +37,23 @@ const Contact = () => {
                 <button
                     type="submit"
                     disabled={state.submitting}
-                    className="w-full py-3 cursor-pointer rounded-md font-semibold transition-colors duration-300 bg-primary
-                    text-white hover:bg-primary-dark disabled:opacity-50 disabled:cursor-not-allowed dark:bg-primary-dark dark:hover:bg-primary"
+                    className="w-full py-3 cursor-pointer rounded-md font-semibold transition-colors duration-300
+                    bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     Send message
                 </button>
             </form>
 
             {state.succeeded && (
-                <div className="mt-5 p-4 bg-green-50 dark:bg-green-900 rounded-md shadow-md text-center">
-                    <p className="text-green-700 dark:text-green-300 mb-4">
+                <div className="mt-5 p-4 bg-success/20 rounded-md shadow-md text-center">
+                    <p className="text-success mb-4">
                         Thanks for contacting me.<br />
                         I will reply as soon as I can! 👏⌛
                     </p>
                     <button
                         onClick={reset}
-                        className="w-full py-3 cursor-pointer rounded-md font-semibold border border-green-700 text-green-700 hover:bg-green-100
-                        dark:border-green-300 dark:text-green-300 dark:hover:bg-green-800 transition-colors duration-300"
+                        className="w-full py-3 cursor-pointer rounded-md font-semibold border border-success text-success
+                        hover:bg-success/10 transition-colors duration-300"
                     >
                         Reset form
                     </button>

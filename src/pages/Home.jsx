@@ -29,7 +29,7 @@ const Home = () => {
                     />
                 </p>
 
-                <p className="text-md text-gray-500 dark:text-gray-400 leading-relaxed">
+                <p className="text-md text-base-content/70 leading-relaxed">
                     I am {getAge('1989-10-12')} years old. I currently work as a consultant at Consid with almost all my focus on frontend. I am <s>fullstack</s>, but I don't like that expression.<br />
                     I work daily with common web techniques such as HTML, CSS and JavaScript.<br />
                     I like React, Vue, Node.js, C#, REST APIs, Cloud platform(s)/services & CMSes.<br /><br />
