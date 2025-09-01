@@ -1,9 +1,9 @@
 const ProjectCard = ({ title, description, period, link, image }) => (
-    <div className="flex justify-between items-start py-6 border-b border-base-200">
-        <div>
+    <div className="flex flex-col items-center py-6 border-b border-base-200">
+        <div className="text-center">
             <p className="text-xs text-base-content/70">{period}</p>
             <h3 className="text-base font-semibold">{title}</h3>
-            <p className="text-sm text-base-content/70 mt-1">{description}</p>
+            <p className="max-w-xs truncate text-sm text-base-content/70 mt-1">{description}</p>
             {link && (
                 <a
                     href={link}
