@@ -22,7 +22,7 @@ const Contact = () => {
                 <input
                     type="text"
                     name="name"
-                    placeholder="Namn"
+                    placeholder="Your name"
                     className="input input-bordered w-full"
                     ref={nameRef}
                     required
@@ -32,7 +32,7 @@ const Contact = () => {
                 <input
                     type="email"
                     name="email"
-                    placeholder="E-post"
+                    placeholder="Your email"
                     className="input input-bordered w-full"
                     ref={emailRef}
                     required
@@ -41,7 +41,7 @@ const Contact = () => {
 
                 <textarea
                     name="message"
-                    placeholder="Meddelande"
+                    placeholder="Your message"
                     className="textarea textarea-bordered w-full"
                     ref={messageRef}
                     required
