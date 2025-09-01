@@ -1,8 +1,19 @@
 import { useForm, ValidationError } from '@formspree/react'
 import SectionTitle from '../components/SectionTitle'
+import { useRef } from 'react'
 
 const Contact = () => {
     const [state, handleSubmit, reset] = useForm("moqglkbl")
+    const nameRef = useRef(null)
+    const emailRef = useRef(null)
+    const messageRef = useRef(null)
+
+    const resetHandler = () => {
+        if (nameRef.current) nameRef.current.value = ''
+        if (emailRef.current) emailRef.current.value = ''
+        if (messageRef.current) messageRef.current.value = ''
+        reset()
+    }
 
     return (
         <section className="max-w-md mx-auto px-4 py-12 space-y-6">
@@ -13,6 +24,7 @@ const Contact = () => {
                     name="name"
                     placeholder="Namn"
                     className="input input-bordered w-full"
+                    ref={nameRef}
                     required
                 />
                 <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-600 text-sm" />
@@ -22,6 +34,7 @@ const Contact = () => {
                     name="email"
                     placeholder="E-post"
                     className="input input-bordered w-full"
+                    ref={emailRef}
                     required
                 />
                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm" />
@@ -30,6 +43,7 @@ const Contact = () => {
                     name="message"
                     placeholder="Meddelande"
                     className="textarea textarea-bordered w-full"
+                    ref={messageRef}
                     required
                 />
                 <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm" />
@@ -51,7 +65,7 @@ const Contact = () => {
                         I will reply as soon as I can! 👏⌛
                     </p>
                     <button
-                        onClick={reset}
+                        onClick={resetHandler}
                         className="w-full py-3 cursor-pointer rounded-md font-semibold border border-success text-success
                         hover:bg-success/10 transition-colors duration-300"
                     >
