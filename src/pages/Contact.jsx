@@ -23,7 +23,10 @@ const Contact = () => {
                     type="text"
                     name="name"
                     placeholder="Your name"
-                    className="input input-bordered w-full"
+                    className="input input-bordered text-base w-full"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    autoCapitalize="off"
                     ref={nameRef}
                     required
                 />
@@ -33,7 +36,10 @@ const Contact = () => {
                     type="email"
                     name="email"
                     placeholder="Your email"
-                    className="input input-bordered w-full"
+                    className="input input-bordered text-base w-full"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    autoCapitalize="off"
                     ref={emailRef}
                     required
                 />
@@ -42,7 +48,10 @@ const Contact = () => {
                 <textarea
                     name="message"
                     placeholder="Your message"
-                    className="textarea textarea-bordered w-full"
+                    className="textarea textarea-bordered text-base w-full"
+                    autoComplete="off"
+                    autoCorrect="off"
+                    autoCapitalize="off"
                     ref={messageRef}
                     required
                 />
