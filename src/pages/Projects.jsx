@@ -18,12 +18,14 @@ const Projects = () => {
                 return res.json()
             })
             .then(data => {
-                const formatted = data.map(repo => ({
-                    title: repo.name,
-                    description: repo.description || 'No description provided.',
-                    period: new Date(repo.created_at).getFullYear() + ' – ' + new Date(repo.pushed_at).getFullYear(),
-                    link: repo.html_url
-                }))
+                const formatted = data
+                    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                    .map(repo => ({
+                        title: repo.name,
+                        description: repo.description || 'No description provided.',
+                        period: new Date(repo.created_at).getFullYear() + ' – ' + new Date(repo.pushed_at).getFullYear(),
+                        link: repo.html_url
+                    }))
                 setRepos(formatted)
                 setError(null)
             })
