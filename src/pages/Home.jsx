@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import avatar from '../assets/avatar.png'
+import avatar from '../assets/avatar.jpg'
 import { ReactTyped } from 'react-typed'
 
 const Home = () => {

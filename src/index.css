@@ -5,3 +5,7 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+[data-theme="light"] {
+  background: #E5E5E5;
+}
