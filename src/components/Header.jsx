@@ -12,7 +12,10 @@ const Header = () => {
 
     return (
         <header className="py-6 px-4 md:px-8 lg:px-16 flex justify-between items-center text-sm tracking-tight">
-            <Link to="/" className="font-medium text-xs sm:text-lg">Sebastian Degerman</Link>
+            <Link to="/" className="font-medium ml-6 sm:ml-0 text-2xl sm:text-lg">
+                <span className="sm:hidden">SD</span>
+                <span className="hidden sm:inline">Sebastian Degerman</span>
+            </Link>
             <nav className="flex space-x-2 sm:space-x-6 text-base sm:text-lg items-center">
                 {navItems.map(item => (
                     <Link

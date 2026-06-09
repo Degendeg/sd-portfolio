@@ -31,7 +31,7 @@ const Projects = () => {
             })
             .catch(err => {
                 console.error(err)
-                setError('Could not load projects, try again!')
+                setError('Could not load projects,\ntry again!')
                 setRepos([])
             })
             .finally(() => setLoading(false))
@@ -52,7 +52,9 @@ const Projects = () => {
         return (
             <section>
                 <SectionTitle title="Repos" />
-                <div className={`${messageStyles} text-red-400`}>{error} 😔</div>
+                <div className={`${messageStyles} text-red-400 whitespace-pre-line sm:whitespace-normal`}>
+                    {error} 😔
+                </div>
             </section>
         )
     }
