@@ -1,87 +1,145 @@
 import { useForm, ValidationError } from '@formspree/react'
 import SectionTitle from '../components/SectionTitle'
-import { useRef } from 'react'
 
 const Contact = () => {
-    const [state, handleSubmit, reset] = useForm("moqglkbl")
-    const nameRef = useRef(null)
-    const emailRef = useRef(null)
-    const messageRef = useRef(null)
+    const [state, handleSubmit, reset] = useForm('moqglkbl')
 
-    const resetHandler = () => {
-        if (nameRef.current) nameRef.current.value = ''
-        if (emailRef.current) emailRef.current.value = ''
-        if (messageRef.current) messageRef.current.value = ''
-        reset()
-    }
+    const inputStyles =
+        'w-full rounded-lg border border-base-300 bg-base-100 px-4 py-3 text-base-content placeholder:text-base-content/40 transition-all duration-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15'
+
+    const labelStyles = 'mb-2 block text-sm font-medium text-base-content/80'
 
     return (
-        <section className="max-w-md mx-auto px-4 py-12 space-y-6">
+        <section className="mx-auto w-full max-w-6xl space-y-8 px-4 py-4">
             <SectionTitle title="Contact me" />
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your name"
-                    className="input input-bordered text-base w-full"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    autoCapitalize="off"
-                    ref={nameRef}
-                    required
-                />
-                <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-600 text-sm" />
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your email"
-                    className="input input-bordered text-base w-full"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    autoCapitalize="off"
-                    ref={emailRef}
-                    required
-                />
-                <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-600 text-sm" />
+            <div className="mx-auto max-w-2xl rounded-2xl border border-base-300 bg-base-100 p-6 shadow-sm sm:p-8">
+                {!state.succeeded ? (
+                    <>
+                        <div className="mb-8 space-y-2">
+                            <h2 className="text-xl font-semibold tracking-tight">
+                                Let's talk
+                            </h2>
+                            <p className="text-sm leading-relaxed text-base-content/65">
+                                Have a question, an idea, or just want to say hello?
+                                Send me a message.
+                            </p>
+                        </div>
 
-                <textarea
-                    name="message"
-                    placeholder="Your message"
-                    className="textarea textarea-bordered text-base w-full"
-                    autoComplete="off"
-                    autoCorrect="off"
-                    autoCapitalize="off"
-                    ref={messageRef}
-                    required
-                />
-                <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-600 text-sm" />
+                        <form onSubmit={handleSubmit} className="space-y-5">
+                            <div>
+                                <label htmlFor="name" className={labelStyles}>
+                                    Your name
+                                </label>
+                                <input
+                                    id="name"
+                                    type="text"
+                                    name="name"
+                                    placeholder="John Doe"
+                                    className={inputStyles}
+                                    autoComplete="name"
+                                    required
+                                />
+                                <ValidationError
+                                    prefix="Name"
+                                    field="name"
+                                    errors={state.errors}
+                                    className="mt-2 block text-sm text-error"
+                                />
+                            </div>
 
-                <button
-                    type="submit"
-                    disabled={state.submitting}
-                    className="w-full py-3 cursor-pointer rounded-md font-semibold transition-colors duration-300
-                    bg-primary text-white hover:bg-primary/80 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                    Send message
-                </button>
-            </form>
+                            <div>
+                                <label htmlFor="email" className={labelStyles}>
+                                    Your email
+                                </label>
+                                <input
+                                    id="email"
+                                    type="email"
+                                    name="email"
+                                    placeholder="john@example.com"
+                                    className={inputStyles}
+                                    autoComplete="email"
+                                    required
+                                />
+                                <ValidationError
+                                    prefix="Email"
+                                    field="email"
+                                    errors={state.errors}
+                                    className="mt-2 block text-sm text-error"
+                                />
+                            </div>
 
-            {state.succeeded && (
-                <div className="mt-5 p-4 bg-success/20 rounded-md shadow-md text-center">
-                    <p className="text-success mb-4">
-                        Thanks for contacting me.<br />
-                        I will reply as soon as I can! 👏⌛
-                    </p>
-                    <button
-                        onClick={resetHandler}
-                        className="w-full py-3 cursor-pointer rounded-md font-semibold border border-success text-success
-                        hover:bg-success/10 transition-colors duration-300"
-                    >
-                        Reset form
-                    </button>
-                </div>
-            )}
+                            <div>
+                                <label htmlFor="message" className={labelStyles}>
+                                    Your message
+                                </label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    placeholder="What's on your mind?"
+                                    rows={5}
+                                    className={`${inputStyles} min-h-36 resize-y`}
+                                    required
+                                />
+                                <ValidationError
+                                    prefix="Message"
+                                    field="message"
+                                    errors={state.errors}
+                                    className="mt-2 block text-sm text-error"
+                                />
+                            </div>
+
+                            <button
+                                type="submit"
+                                disabled={state.submitting}
+                                className="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 font-semibold text-primary-content transition-all duration-200 hover:opacity-85 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50"
+                            >
+                                {state.submitting ? 'Sending message...' : 'Send message'}
+                                {!state.submitting && (
+                                    <span aria-hidden="true" className="transition-transform duration-200">
+                                        ⟶
+                                    </span>
+                                )}
+                            </button>
+                        </form>
+                    </>
+                ) : (
+                    <div className="flex flex-col items-center py-8 text-center">
+                        <div className="mb-5 flex size-14 items-center justify-center rounded-full bg-success/10 text-success">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                className="size-7"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="m5 12 4 4L19 6"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </div>
+
+                        <h2 className="text-xl font-semibold tracking-tight">
+                            Message sent!
+                        </h2>
+
+                        <p className="mt-2 max-w-sm text-sm leading-relaxed text-base-content/65">
+                            Thanks for reaching out. I'll get back to you as soon as I can.
+                        </p>
+
+                        <button
+                            type="button"
+                            onClick={reset}
+                            className="mt-6 rounded-lg border border-base-300 bg-base-300 cursor-pointer px-5 py-2.5 text-sm font-medium transition-colors duration-200 hover:bg-base-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                        >
+                            Send another message
+                        </button>
+                    </div>
+                )}
+            </div>
         </section>
     )
 }

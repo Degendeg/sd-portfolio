@@ -69,7 +69,7 @@ const Projects = () => {
     }
 
     return (
-        <section>
+        <section className="mx-auto w-full max-w-6xl space-y-8 px-4 py-4">
             <SectionTitle title="Repos" />
             <div className="grid md:grid-cols-2 gap-6">
                 {repos.map((repo, idx) => (

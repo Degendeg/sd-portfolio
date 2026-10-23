@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from 'react-scroll-to-top'
 import Home from '../pages/Home'
-import Projects from '../pages/Projects'
+import Repos from '../pages/Repos'
 import Contact from '../pages/Contact'
 import Header from './Header'
 import Footer from './Footer'
@@ -41,7 +41,7 @@ function App() {
         <main className="flex-grow container mx-auto px-4">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/repos" element={<Repos />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

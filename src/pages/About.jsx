@@ -34,29 +34,70 @@ const About = () => {
     const [expanded, setExpanded] = useState(false)
 
     return (
-        <section className="max-w-3xl mx-auto px-4 py-12 space-y-8">
+        <section className="mx-auto w-full max-w-6xl space-y-8 px-4 py-4">
             <SectionTitle title="About me" />
 
-            {randomFacts.map(({ header, text }, i) => (
-                <div key={i} className="space-y-2">
-                    <h2 className="text-lg font-semibold">{header}</h2>
-                    <p className="text-base-content leading-relaxed">
-                        <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(text) }} />
-                    </p>
+            <div className="grid gap-5 md:grid-cols-2">
+                {randomFacts.map(({ header, text }) => {
+                    const isCat = header === 'Cat Owner'
 
-                    {header.includes('Cat') && (
-                        <img
-                            src={cat}
-                            alt="Elda the cat"
-                            loading="lazy"
-                            className={`rounded-lg mt-4 shadow-md cursor-pointer transition-all duration-300 ease-in-out ${expanded ? 'w-180' : 'w-24 animate-pulse'
+                    return (
+                        <article
+                            key={header}
+                            className={`rounded-2xl border border-base-300 bg-base-100 p-6 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md ${isCat ? 'md:col-span-2' : ''
                                 }`}
-                            onClick={() => setExpanded(!expanded)}
-                            title={expanded ? 'Click to minimize' : 'Click to expand'}
-                        />
-                    )}
-                </div>
-            ))}
+                        >
+                            <div
+                                className={
+                                    isCat
+                                        ? 'grid gap-6 md:grid-cols-2 md:items-center'
+                                        : 'space-y-3'
+                                }
+                            >
+                                <div className="space-y-3">
+                                    <h2 className="text-lg font-semibold tracking-tight">
+                                        {header}
+                                    </h2>
+
+                                    <div className="h-1 w-10 rounded-full bg-primary/70" />
+
+                                    <p className="text-base-content/80 leading-relaxed">
+                                        <span
+                                            dangerouslySetInnerHTML={{
+                                                __html: DOMPurify.sanitize(text),
+                                            }}
+                                        />
+                                    </p>
+                                </div>
+
+                                {isCat && (
+                                    <div className="flex justify-start md:justify-center">
+                                        <button
+                                            type="button"
+                                            onClick={() => setExpanded(!expanded)}
+                                            aria-expanded={expanded}
+                                            aria-label={expanded ? 'Minimize image of Elda' : 'Expand image of Elda'}
+                                            title={expanded ? 'Click to minimize' : 'Click to expand'}
+                                            className={`group block cursor-pointer max-w-full overflow-hidden rounded-xl transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${expanded ? 'w-full' : 'w-24'
+                                                }`}
+                                        >
+                                            <div className="flex min-h-24 items-center justify-center">
+                                                <img
+                                                    src={cat}
+                                                    alt="Elda the cat"
+                                                    loading="lazy"
+                                                    className={`block h-auto max-h-[420px] w-full rounded-xl object-contain transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${expanded ? 'scale-100' : 'scale-100 group-hover:scale-105'
+                                                        }`}
+                                                />
+                                            </div>
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        </article>
+                    )
+                })}
+            </div>
         </section>
     )
 }

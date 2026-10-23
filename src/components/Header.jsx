@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle'
 
 const navItems = [
-    { label: 'Projects', path: '/projects' },
+    { label: 'Repos', path: '/repos' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
 ]
