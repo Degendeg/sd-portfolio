@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import cat from '../assets/cat.jpg'
 import SectionTitle from '../components/SectionTitle'
 import DOMPurify from 'dompurify'
@@ -32,6 +32,18 @@ const randomFacts = [
 
 const About = () => {
     const [expanded, setExpanded] = useState(false)
+
+    useEffect(() => {
+        if (!expanded) return
+
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') setExpanded(false)
+        }
+
+        window.addEventListener('keydown', handleKeyDown)
+
+        return () => window.removeEventListener('keydown', handleKeyDown)
+    }, [expanded])
 
     return (
         <section className="mx-auto w-full max-w-6xl space-y-8 px-4 py-4">
@@ -74,22 +86,23 @@ const About = () => {
                                     <div className="flex justify-start md:justify-center">
                                         <button
                                             type="button"
-                                            onClick={() => setExpanded(!expanded)}
-                                            aria-expanded={expanded}
-                                            aria-label={expanded ? 'Minimize image of Elda' : 'Expand image of Elda'}
-                                            title={expanded ? 'Click to minimize' : 'Click to expand'}
-                                            className={`group block cursor-pointer max-w-full overflow-hidden rounded-xl transition-[width] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${expanded ? 'w-full' : 'w-24'
-                                                }`}
+                                            onClick={() => setExpanded(true)}
+                                            aria-label="Expand image of Elda"
+                                            className="group relative aspect-square w-32 shrink-0 cursor-zoom-in overflow-hidden rounded-2xl border border-base-300 bg-base-200/50 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:w-40"
                                         >
-                                            <div className="flex min-h-24 items-center justify-center">
-                                                <img
-                                                    src={cat}
-                                                    alt="Elda the cat"
-                                                    loading="lazy"
-                                                    className={`block h-auto max-h-[420px] w-full rounded-xl object-contain transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${expanded ? 'scale-100' : 'scale-100 group-hover:scale-105'
-                                                        }`}
-                                                />
-                                            </div>
+                                            <img
+                                                src={cat}
+                                                alt="Elda the cat"
+                                                loading="lazy"
+                                                className="size-full object-contain p-2 transition-transform duration-500 ease-out group-hover:scale-105"
+                                            />
+
+                                            <span
+                                                aria-hidden="true"
+                                                className="absolute right-2 top-2 flex size-7 items-center justify-center rounded-full bg-base-100/90 text-base-content shadow-sm transition-transform duration-300 group-hover:scale-110"
+                                            >
+                                                ⤢
+                                            </span>
                                         </button>
                                     </div>
                                 )}
@@ -97,6 +110,53 @@ const About = () => {
                         </article>
                     )
                 })}
+            </div>
+            <div
+                aria-hidden={!expanded}
+                onClick={() => setExpanded(false)}
+                className={`!m-0 fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm transition-all duration-300 ${expanded
+                    ? 'visible opacity-100'
+                    : 'invisible pointer-events-none opacity-0'
+                    }`}
+            >
+                <div
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="Photo of Elda"
+                    onClick={(event) => event.stopPropagation()}
+                    className={`relative max-w-[92vw] transition-all duration-300 ease-out ${expanded
+                        ? 'translate-y-0 scale-100'
+                        : 'translate-y-3 scale-95'
+                        }`}
+                >
+                    <button
+                        type="button"
+                        onClick={() => setExpanded(false)}
+                        aria-label="Close image"
+                        className="absolute right-3 top-3 z-10 flex size-10 cursor-pointer items-center justify-center rounded-full bg-black/60 text-white shadow-lg backdrop-blur transition-colors hover:bg-black/80"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            className="size-5"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                        >
+                            <path d="M18 6 6 18M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    <img
+                        src={cat}
+                        alt="Elda the cat"
+                        className="block max-h-[82vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl"
+                    />
+
+                    <p className="mt-3 text-center text-sm text-white/70">
+                        Elda · Click outside or press Esc to close
+                    </p>
+                </div>
             </div>
         </section>
     )
