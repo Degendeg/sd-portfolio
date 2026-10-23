@@ -38,7 +38,7 @@ const Home = () => {
                 <p className="min-h-7 text-lg font-semibold">
                     <ReactTyped
                         strings={[
-                            'I primarily work as a frontend developer',
+                            'I primarily work with frontend',
                             'I sometimes do backend',
                             'I help code find its way to the cloud',
                             'I used to work as a teacher',
