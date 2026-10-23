@@ -21,7 +21,7 @@ const getAge = (dateOfBirth) => {
 
 const Home = () => {
     return (
-        <div className="flex items-center justify-center px-4 py-12">
+        <div className="flex items-center justify-center px-4 py-4">
             <section className="w-full max-w-2xl space-y-6 text-center">
                 <div className="relative mx-auto size-48 overflow-hidden rounded-full shadow-[0_0_15px_5px_rgba(147,197,253,0.6)] ring-4 ring-gray-500/60 transition-all duration-300 hover:shadow-[0_0_20px_8px_rgba(147,197,253,0.9)] hover:ring-gray-500 sm:size-64 md:size-80">
                     <img
